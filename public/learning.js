@@ -96,30 +96,48 @@
 //   const func = capitalizeFirstLetter('my name')
 //   console.log()
 
-const firstCapitalize = (str) => {
-  let words = str.split(" ");
-//   console.log(words);
-  // for(let w=0;w<words,length;w++){
-  //     console.log(words[w]);
-  // }
 
-  // let result=[];
-  let result = "";
-  for (let w of words) {
-    // console.log(w);
-    let firstUpper = w.charAt(0).toUpperCase();
-    let remainingChar = w.slice(1).toLowerCase();
-    // console.log(firstUpper);
-    // console.log(remainingChar);
-    let word = `${firstUpper}${remainingChar}`;
-    // console.log(word);
-    // result.push(word)
-    result = result + word + " ";
-  }
-//   console.log(result);
-  // const output = result.join(' ');
-  // console.log(output)
 
-  return result.trim();
+
+// const firstCapitalize = (str) => {
+//   let words = str.split(" ");
+// //   console.log(words);
+//   // for(let w=0;w<words,length;w++){
+//   //     console.log(words[w]);
+//   // }
+
+//   // let result=[];
+//   let result = "";
+//   for (let w of words) {
+//     // console.log(w);
+//     let firstUpper = w.charAt(0).toUpperCase();
+//     let remainingChar = w.slice(1).toLowerCase();
+//     // console.log(firstUpper);
+//     // console.log(remainingChar);
+//     let word = `${firstUpper}${remainingChar}`;
+//     // console.log(word);
+//     // result.push(word)
+//     result = result + word + " ";
+//   }
+// //   console.log(result);
+//   // const output = result.join(' ');
+//   // console.log(output)
+
+//   return result.trim();
+// };
+// console.log(firstCapitalize("my name is munna pajiyar"));
+
+
+
+const convertTo12HourFormat = (hours24, minutes24) => {
+    const period = hours24 >= 12 ? 'PM' : 'AM';
+    const hours12 = hours24 % 12 || 12;
+    
+    const formattedHours = hours12 < 10 ? '0' + hours12 : hours12;
+    const formattedMinutes = minutes24 < 10 ? '0' + minutes24 : minutes24;
+    
+    return `${formattedHours}:${formattedMinutes} ${period}`;
 };
-console.log(firstCapitalize("my name is munna pajiyar"));
+
+console.log(convertTo12HourFormat(13, 5));   
+
