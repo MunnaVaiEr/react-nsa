@@ -1,6 +1,12 @@
 // const myArray = [1,2,3,4,5]
 // const myString = ['hi','munna','bye']
 
+
+
+// const { stringify } = require("ajv");
+
+// const { resolveUrl } = require("ajv/dist/compile/resolve");
+
 // // for(let i=0;i<myArray;i++){
 
 // // }
@@ -96,9 +102,6 @@
 //   const func = capitalizeFirstLetter('my name')
 //   console.log()
 
-
-
-
 // const firstCapitalize = (str) => {
 //   let words = str.split(" ");
 // //   console.log(words);
@@ -127,17 +130,100 @@
 // };
 // console.log(firstCapitalize("my name is munna pajiyar"));
 
+//Convert  the time to 12hr format
+// const convertTo12HourFormat = (hours24, minutes24) => {
+//     const period = hours24 >= 12 ? 'PM' : 'AM';
+//     const hours12 = hours24 % 12 || 12;
+
+//     const formattedHours = hours12 < 10 ? '0' + hours12 : hours12;
+//     const formattedMinutes = minutes24 < 10 ? '0' + minutes24 : minutes24;
+
+//     return `${formattedHours}:${formattedMinutes} ${period}`;
+// };
+
+// console.log(convertTo12HourFormat(23, 25));
+
+//higher order function
+// -function as argumenet/ parameter
+// -return as function
+
+//-> reuseable
+//-> map
+//->Filter
+//->ForEach
+// every, some, Reduce, FindIndex, Find. selfstudy
+
+// 1. Function as argument
+// function hofAsArgument(firstName, callback) {
+// console.log('This is first function');
+// console.log(firstName);
+// callback();
+
+// }
+
+// function callBackFunction() {
+//   console.log("This is second function");
+// }
+
+// const functionacall = hofAsArgument("Munna",callBackFunction)
+
+// // 2. Function as return
+// function hofAsReturn(value){
+//     return function(multiplier){
+//         return multiplier * value;
+//     }
+
+// }
+//  const hofReturnData = hofAsReturn(2)
+//  const result =hofReturnData(5);
+//  console.log(result)
+
+//Built-in HOFs Function
+// 1. forEach
+
+//  const positiveNumber = [1,2,3,4,5,6];
+//  positiveNumber.forEach((item, index)=>{
+//     console.log("Index: " + index, "value: ",item)
+//  })
+
+//  console.log(positiveNumber)
+
+// 2. Filter
+//  const positivNumber = [1,2,3,4,5,6];
+//  const filterResult = positivNumber.filter((item)=>{
+//     // console.log("Index: " + index, "value: ",item)
+//     return item > 4;
+//  })
+
+//  console.log("ORIGIAL ARRAY: ",positivNumber);
+//  console.log("Filtered Array: ",filterResult);
+
+// 3. Map
+// const positivNumber = [1, 2, 3, 4, 5, 6];
+// const filterResult = positivNumber.map((item, index) => {
+//   // console.log("Index: " + index, "value: ",item)
+//   return String(item*2);
+// });
+
+// console.log("ORIGIAL ARRAY: ", positivNumber);
+// console.log("Filtered Array: ", filterResult);
 
 
-const convertTo12HourFormat = (hours24, minutes24) => {
-    const period = hours24 >= 12 ? 'PM' : 'AM';
-    const hours12 = hours24 % 12 || 12;
-    
-    const formattedHours = hours12 < 10 ? '0' + hours12 : hours12;
-    const formattedMinutes = minutes24 < 10 ? '0' + minutes24 : minutes24;
-    
-    return `${formattedHours}:${formattedMinutes} ${period}`;
-};
 
-console.log(convertTo12HourFormat(13, 5));   
+const students = [
+    {name: 'Munna', grade: 3.99, address: 'ktm'},
+    {name: 'RN', grade: 3.24, address: 'Brt'},
+    {name: 'Aakelo', grade: 2.4, address: 'bkt'},
+    {name: 'ARM', grade: 9.99, address: 'pkh'},
 
+]
+
+
+const filterR = students.filter((grade)=>{
+    return grade.grade>3.5;
+})
+
+const mapr = filterR.map((item)=>{
+    return item.name;
+})
+console.log(mapr)
