@@ -210,20 +210,103 @@
 
 
 
-const students = [
-    {name: 'Munna', grade: 3.99, address: 'ktm'},
-    {name: 'RN', grade: 3.24, address: 'Brt'},
-    {name: 'Aakelo', grade: 2.4, address: 'bkt'},
-    {name: 'ARM', grade: 9.99, address: 'pkh'},
+// const students = [
+//     {name: 'Munna', grade: 3.99, address: 'ktm'},
+//     {name: 'RN', grade: 3.24, address: 'Brt'},
+//     {name: 'Aakelo', grade: 2.4, address: 'bkt'},
+//     {name: 'ARM', grade: 9.99, address: 'pkh'},
 
-]
+// ]
 
 
-const filterR = students.filter((grade)=>{
-    return grade.grade>3.5;
-})
+// const filterR = students.filter((grade)=>{
+//     return grade.grade>3.5;
+// })
 
-const mapr = filterR.map((item)=>{
-    return item.name;
-})
-console.log(mapr)
+// const mapr = filterR.map((item)=>{
+//     return item.name;
+// })
+// console.log(mapr)
+
+
+
+
+
+
+
+// 17/12/2024
+
+// Task 12: - vlidatets email using  regex
+
+// const emailList = ['test@gmail.com', 'hello world', 'rupak@GMAIL.com'];
+// const validEmails = emailList.filter((email) =>
+//      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)).map((email) => 
+//         email.toLowerCase()); 
+
+// console.log(validEmails);
+
+
+// Try-Catch in js
+// try {
+//     console.log('This is Try block')
+//     kandskjcx
+// } catch (error) {
+//     console.log('This is catch block')
+// } finally {
+//     console.log('This is finally block')
+// }
+
+
+// // Promises, async/await
+// const promise = new Promise((resolve, reject) => {
+//     console.log('This Promise');
+//     const success = false;
+//     if (success) {
+//         resolve('Done')
+//     } else {
+//         reject('Failed')
+//     }
+// })
+// promise.then((result) => {
+//     console.log(result)
+// }).catch(error => {
+//     console.log(error)
+// })
+
+// //fetch () api
+// //axios
+
+
+// //asysn/await
+// async function networkApiCall() {
+//     try{
+//     const request = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const result = await request.json();
+//     console.log(result)
+//     result.forEach(result => {
+//         console.log(result.name)
+//     })
+//     // for(const nam of result){
+//     //     console.log(nam.name)
+//     // }
+//     } catch(error){
+//         console.log('Error: '+ error);
+//     }
+    
+// }
+// networkApiCall();
+
+//------------------Destructing ------->unpack
+
+//1. ObjectDestructing
+const myObject = {'name': 'Munna Pajiyar', age: 23}
+const {name,age, addr} = myObject
+console.log(name,age,addr);
+
+
+//2. array destructing
+const myArray = [1,2,3,4,5,6]
+const [first,second] = myArray;
+console.log(first,second)
+
+
