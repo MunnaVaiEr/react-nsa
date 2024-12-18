@@ -296,17 +296,128 @@
 // }
 // networkApiCall();
 
+
+// Task 3: Count Vowels and Consonants in a String
+// const countVowelsAndConsonants = (str) => {
+//     const vowels = 'aeiouAEIOU';
+//     return [...str].reduce(
+//         (count, char) => {
+//             if (vowels.includes(char)) count.vowels++;
+//             else if (/[a-zA-Z]/.test(char)) count.consonants++;
+//             return count;
+//         },
+//         { vowels: 0, consonants: 0 }
+//     );
+// };
+
+// Task 5: Remove Duplicates from an Array of Objects
+// const removeDuplicates = (arr, key) => [...new Map(arr.map(item => [item[key], item])).values()];
+
+// Task 7: Find Missing Number in a Range
+// const findMissingNumber = (arr, rangeStart, rangeEnd) =>
+//     Array.from({ length: rangeEnd - rangeStart + 1 }, (_, i) => rangeStart + i).find(num => !arr.includes(num));
+
+// Task 10: Count the Occurrences of a Specific Element
+// const countOccurrences = (arr, element) => arr.reduce((count, item) => 
+//     (item === element ? count + 1 : count), 0);
+
 //------------------Destructing ------->unpack
 
 //1. ObjectDestructing
-const myObject = {'name': 'Munna Pajiyar', age: 23}
-const {name,age, addr} = myObject
-console.log(name,age,addr);
+// const myObject = {'name': 'Munna Pajiyar', age: 23}
+// const {name,age, addr} = myObject
+// console.log(name,age,addr);
 
 
-//2. array destructing
-const myArray = [1,2,3,4,5,6]
-const [first,second] = myArray;
-console.log(first,second)
+// //2. array destructing
+// const myArray = [1,2,3,4,5,6]
+// const [first,second] = myArray;
+// console.log(first,second)
+
+//HomeWork
+
+// Task 1: Check if a Word is a Subsequence of Another
+// const isSubsequence = (word, target) => {
+//     let index = 0;
+//     return [...target].every(char => (char === word[index] ? index++ : index) || index === word.length);
+// };
 
 
+// // Task 4: Find All Palindromes in an Array
+// const findPalindromes = (arr) => arr.filter(word => word === [...word].reverse().join(''));
+
+
+
+// // Task 6: Find the Intersection of Two Arrays
+// const findIntersection = (arr1, arr2) => arr1.filter(item => arr2.includes(item));
+
+
+// // Task 9: Filter Out Negative Numbers
+// const filterNegativeNumbers = arr => arr.filter(num => num >= 0);
+
+
+
+// // Task 11: Find the Longest Word in a String
+// const findLongestWord = str =>
+//     str.split(/\s+/).reduce((longest, word) => (word.length > longest.length ? word : longest), '');
+
+
+//spread & Rest operater in JS
+//Spread==>unpack
+// Rest==> pack
+
+// 1. Rest Operater
+// function sum(a,b,...other){
+//     console.log(a+b);
+//     for(const i of other){
+//         (a+b) += i;
+//     }
+//     console.log(other)
+//     console.log(a+b)
+// }
+// sum(1,2,3,4,5,6,7,8,9)
+
+const sampleObject = {
+    id: 1,
+    city: 'Kathmandu',
+    customerName: 'Munna'
+}
+const {id,...otherObj} = sampleObject
+console.log(id);
+console.log(otherObj)
+
+
+//spread operater
+const old = [1,2,3,4,5,6]
+const old2 = [7,8]
+const newArray = [...old,...old2]
+console.log(newArray);
+console.log(Math.max(...old));
+
+const oldObject ={
+    id: 2,
+    name : "munna",
+    address: 'ktm'
+}
+const newObj = {
+    ...oldObject,
+    grade : 'A'
+}
+console.log(newObj)
+
+
+// Task: Calculate averege from number input 
+// Eg. input: 10,"hello",34,-1,34
+
+ const averegeNum = (...inputs)=>{
+    const numberOnly= inputs.filter(num => typeof num ==='number')
+    let sum =0;
+    let count =0;
+    for (const n of numberOnly){
+        sum += n;
+        count++;
+    }
+    const result = sum/count;
+    console.log(result);
+ }
+ averegeNum(10,"hello",34,-1,34, true,30,'world')
