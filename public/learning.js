@@ -337,11 +337,20 @@
 //HomeWork
 
 // Task 1: Check if a Word is a Subsequence of Another
-const isSubsequence = (word, target) => {
-    let index = 0;
-    return [...target].every(char => (char === word[index] ? index++ : index) || index === word.length);
-};
-console.log(isSubsequence('abc','abcyhuhuyi'))
+
+// const isSubsequence1 = (word, target) => {
+//     let index = 0;
+//     for(const char of target){
+//         if(char === word[index]){
+//             index++
+//         }
+//         if(index === word.length){
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+// console.log(isSubsequence1('ab','affc'))
 
 
 // // Task 4: Find All Palindromes in an Array
@@ -422,3 +431,51 @@ console.log(isSubsequence('abc','abcyhuhuyi'))
 //     console.log(result);
 //  }
 //  averegeNum(10,"hello",34,-1,34, true,30,'world')
+
+
+const getUserInput = (input) =>{
+    // if(input == 1){
+    //     console.log("ROCK")
+    // }
+    // if(input == 2){
+    //     console.log("PAPER");
+        
+    // }
+    // if(input == 3){
+    //     console.log("SCISSOR")
+    // }
+    return input;
+}
+const getComputerResult = () => {
+    const choices = ['rock','paper','scissors']
+    const random = Math.floor(Math.random()*choices.length)
+    return choices[random]
+}
+const getWinner =(user, computer)=>{
+    if(user === computer){
+        return 'Draw'
+    }
+    if(user ==='rock' && computer==='scissors'){
+        return 'user wins the game'
+    }
+    if(user ==='paper' && computer==='rock'){
+        return 'user wins the game'
+    }
+    if(user ==='scissors' && computer==='paper'){
+        return 'user wins the game'
+    }
+    return 'computer wins the game'
+
+}
+const playGame = (round = 5) =>{
+    for(let i=0; i<round;i++){
+        const choices =getUserInput('rock')
+        const computerChoice = getComputerResult();
+        const winner = getWinner(choices,computerChoice);
+        console.log(`user: ${choices} computer: ${computerChoice} winner: ${winner}`)
+    }
+    
+
+}
+playGame(20)
+// getComputerResult(3)
