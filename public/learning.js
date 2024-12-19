@@ -337,10 +337,11 @@
 //HomeWork
 
 // Task 1: Check if a Word is a Subsequence of Another
-// const isSubsequence = (word, target) => {
-//     let index = 0;
-//     return [...target].every(char => (char === word[index] ? index++ : index) || index === word.length);
-// };
+const isSubsequence = (word, target) => {
+    let index = 0;
+    return [...target].every(char => (char === word[index] ? index++ : index) || index === word.length);
+};
+console.log(isSubsequence('abc','abcyhuhuyi'))
 
 
 // // Task 4: Find All Palindromes in an Array
@@ -377,47 +378,47 @@
 // }
 // sum(1,2,3,4,5,6,7,8,9)
 
-const sampleObject = {
-    id: 1,
-    city: 'Kathmandu',
-    customerName: 'Munna'
-}
-const {id,...otherObj} = sampleObject
-console.log(id);
-console.log(otherObj)
+// const sampleObject = {
+//     id: 1,
+//     city: 'Kathmandu',
+//     customerName: 'Munna'
+// }
+// const {id,...otherObj} = sampleObject
+// console.log(id);
+// console.log(otherObj)
 
 
-//spread operater
-const old = [1,2,3,4,5,6]
-const old2 = [7,8]
-const newArray = [...old,...old2]
-console.log(newArray);
-console.log(Math.max(...old));
+// //spread operater
+// const old = [1,2,3,4,5,6]
+// const old2 = [7,8]
+// const newArray = [...old,...old2]
+// console.log(newArray);
+// console.log(Math.max(...old));
 
-const oldObject ={
-    id: 2,
-    name : "munna",
-    address: 'ktm'
-}
-const newObj = {
-    ...oldObject,
-    grade : 'A'
-}
-console.log(newObj)
+// const oldObject ={
+//     id: 2,
+//     name : "munna",
+//     address: 'ktm'
+// }
+// const newObj = {
+//     ...oldObject,
+//     grade : 'A'
+// }
+// console.log(newObj)
 
 
-// Task: Calculate averege from number input 
-// Eg. input: 10,"hello",34,-1,34
+// // Task: Calculate averege from number input 
+// // Eg. input: 10,"hello",34,-1,34
 
- const averegeNum = (...inputs)=>{
-    const numberOnly= inputs.filter(num => typeof num ==='number')
-    let sum =0;
-    let count =0;
-    for (const n of numberOnly){
-        sum += n;
-        count++;
-    }
-    const result = sum/count;
-    console.log(result);
- }
- averegeNum(10,"hello",34,-1,34, true,30,'world')
+//  const averegeNum = (...inputs)=>{
+//     const numberOnly= inputs.filter(num => typeof num ==='number')
+//     let sum =0;
+//     let count =0;
+//     for (const n of numberOnly){
+//         sum += n;
+//         count++;
+//     }
+//     const result = sum/count;
+//     console.log(result);
+//  }
+//  averegeNum(10,"hello",34,-1,34, true,30,'world')
